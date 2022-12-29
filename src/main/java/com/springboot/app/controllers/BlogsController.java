@@ -117,7 +117,7 @@ public class BlogsController {
 			flash.addFlashAttribute("success", "Registro eliminado con éxito!");
 
 		}
-		return "forwar:/blogs";
+		return "redirect:/blogs";
 	}
 
 	@Secured({ "ROLE_ADMIN" })
@@ -176,7 +176,7 @@ public class BlogsController {
 
 		flash.addFlashAttribute("success", mensaje);
 
-		return "forwar:/blog/form/editar/" + newBlog.getId();
+		return "redirect:/blog/form/editar/" + newBlog.getId();
 	}
 
 	@Secured({"ROLE_USER", "ROLE_ADMIN" })
@@ -196,7 +196,7 @@ public class BlogsController {
 		return "blog";
 	}
 	
-	@Secured({"ROLE_USER", "ROLE_ADMIN" })
+	@Secured({ "ROLE_ADMIN" })
 	@GetMapping(value = "/lectorblog")
 	public String lectorBlog(Map<String, Object> model, RedirectAttributes flash) {
 
