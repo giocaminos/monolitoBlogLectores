@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="layout/layout :: head"></head>
+<body>
+
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container py-4">
+		<div class="card bg-light">
+			<div class="card-header" th:text="${titulo}"></div>
+			<div class="card-body">
+				<h4 class="card-title" th:text="${titulo}"></h4>
+
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Fecha</th>
+							<th scope="col">Nombre de Blog</th>
+							<th scope="col">Tipo de Blog</th>
+							<th scope="col">Usuario</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="item: ${listLectorBlog}">
+							<th th:text="${item.id}"></th>
+							<th th:text="${item.date}"></th>
+							<th th:text="${item.nameBlog}"></th>
+							<th th:text="${item.typeBlog}"></th>
+							<th th:text="${item.user}"></th>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+	</div>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>
