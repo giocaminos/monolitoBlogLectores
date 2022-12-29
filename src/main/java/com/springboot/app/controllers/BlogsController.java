@@ -191,7 +191,6 @@ public class BlogsController {
 		lectorBlogService.save(lectorBlog);
 		
 		model.put("entity", blog);
-		model.put("titulo", "Listado de Visitas por Blog");
 
 		return "blog";
 	}
